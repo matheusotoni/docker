@@ -1,6 +1,6 @@
 - [RabbitMQ](#RabbitMQ)
   - [Plugins](#plugins)
-  - [Como executar o Dockerfile](como-executar-o-dockerfile)
+  - [Como executar o Dockerfile](#como-executar-o-dockerfile)
   - [Comando sem plugins habilitados](#comando-sem-plugins-habilitados)
   - [Acessar o RabbitMQ](#acessar-o-rabbitmq)
 - [Referências](#referências)
