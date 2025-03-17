@@ -3,6 +3,10 @@
   - [Como executar o Dockerfile](#como-executar-o-dockerfile)
   - [Comando sem plugins habilitados](#comando-sem-plugins-habilitados)
   - [Acessar o RabbitMQ](#acessar-o-rabbitmq)
+  - [Outros Comandos](#outros-comandos)
+    - [Deletar o container](#deletar-o-container)
+    - [Deletar a imagem](#deletar-a-imagem)
+    - [Listar as imagens](#listar-as-imagens)
 - [Referências](#referências)
 
 # RabbitMQ
