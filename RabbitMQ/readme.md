@@ -51,6 +51,34 @@ docker run -it --rm --name rabbitmq-4.0.1-management -p 5672:5672 -p 8081:15672 
 ## Acessar o RabbitMQ
 Se todos os passos estiverem certos, basta acessar a página do RabbitMQ: http://localhost:8081/ e colocar o usuário e a senha padrão que é: **usuário** = `guest`e **senha** = `guest`
 
+## Outros comandos
+
+### Deletar o container
+
+```sh
+docker rm -f <id|nome do container>
+```
+
+Exemplo: `docker rm -f rabbitmq_custom`
+
+| Parâmetro | Descrição |
+|--|--|
+| -f | força a remoção, mesmo que esteja rodando |
+
+### Deletar a imagem
+
+```sh
+docker rmi <id da imagem>
+```
+
+Exemplo: `docker rmi rabbitmq_custom`
+
+### Listar as imagens
+
+```sh
+docker images
+```
+
 # Referências
 
 - [RabbitMQ - Installing RabbitMQ](https://www.rabbitmq.com/download.html)
