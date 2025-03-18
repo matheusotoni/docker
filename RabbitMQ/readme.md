@@ -4,13 +4,14 @@
   - [Comando sem plugins habilitados](#comando-sem-plugins-habilitados)
   - [Acessar o RabbitMQ](#acessar-o-rabbitmq)
   - [Outros Comandos](#outros-comandos)
+    - [Listar os containers](#listar-os-containers)
     - [Deletar o container](#deletar-o-container)
-    - [Deletar a imagem](#deletar-a-imagem)
     - [Listar as imagens](#listar-as-imagens)
+    - [Deletar a imagem](#deletar-a-imagem)
 - [Referências](#referências)
 
 # RabbitMQ
-Comando docker para instalar a imagem do RabbitMQ 4.0.1 com gerenciador. 
+Comando docker para instalar a imagem do RabbitMQ 4.0.7 com gerenciador. 
 
 ## Plugins 
 Alguns plugins são habilitados, eles são:
@@ -23,17 +24,17 @@ Alguns plugins são habilitados, eles são:
 ## Como executar o Dockerfile
 
 1. Abram o `CMD` ou `PowerShell`
-2. Vá na pasta **docker\RabbitMQ** que tem o  arquivo **Dockerfile**;
+2. Vá na pasta **docker\RabbitMQ** que tem o arquivo **Dockerfile**;
 3. Execute o comando do docker build para construir a imagem com o nome _rabbitmq_custom_
     
     ```sh    
-    docker build -t rabbitmq_custom .
+    docker build --load -t rabbitmq_custom .
     ```
 
 4. Execute o comando do docker run que irá rodar o container com a imagem criada
     
     ```sh    
-    docker run -d --name rabbitmq-4.0.1-management -p 5672:5672 -p 8081:15672 rabbitmq_custom
+    docker run -d --name rabbitmq-4.0.7-management -p 5672:5672 -p 8081:15672 rabbitmq_custom
     ```
 
 ## Comando sem plugins habilitados
@@ -41,7 +42,7 @@ Alguns plugins são habilitados, eles são:
 Abra o `CMD` ou `PowerShell` e execute o seguinte comando:
 
 ```sh
-docker run -it --rm --name rabbitmq-4.0.1-management -p 5672:5672 -p 8081:15672  -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:4.0.1-management
+docker run -it --rm --name rabbitmq-4.0.7-management -p 5672:5672 -p 8081:15672  -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:4.0.7-management
 ```
 
 
@@ -57,10 +58,16 @@ Se todos os passos estiverem certos, basta acessar a página do RabbitMQ: http:/
 
 ## Outros comandos
 
+### Listar os containers
+
+```sh
+docker ps
+```
+
 ### Deletar o container
 
 ```sh
-docker rm -f <id|nome do container>
+docker rm -f <id do container>
 ```
 
 Exemplo: `docker rm -f rabbitmq_custom`
@@ -69,6 +76,12 @@ Exemplo: `docker rm -f rabbitmq_custom`
 |--|--|
 | -f | força a remoção, mesmo que esteja rodando |
 
+### Listar as imagens
+
+```sh
+docker images
+```
+
 ### Deletar a imagem
 
 ```sh
@@ -76,12 +89,6 @@ docker rmi <id da imagem>
 ```
 
 Exemplo: `docker rmi rabbitmq_custom`
-
-### Listar as imagens
-
-```sh
-docker images
-```
 
 # Referências
 

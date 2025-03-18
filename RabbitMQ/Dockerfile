@@ -1,7 +1,7 @@
 # Usando a imagem do RabbitMQ versão 4.0.1-management
-FROM rabbitmq:4.0.1-management
+FROM rabbitmq:4.0.7-management
 
-LABEL RabbitMQ.Version="4.0.1-management"
+LABEL RabbitMQ.Version="4.0.7-management"
 
 # Habilitar os plugins necessários
 RUN rabbitmq-plugins enable --offline rabbitmq_management_agent rabbitmq_prometheus rabbitmq_shovel rabbitmq_shovel_management
